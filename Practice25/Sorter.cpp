@@ -1,7 +1,7 @@
 #include "Sorter.h"
 
 long heapsort(std::vector<int>& arr) {
-    long swapCount = 1;
+    long swapCount = 0;
 
     return swapCount;
 }
