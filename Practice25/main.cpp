@@ -10,6 +10,7 @@
 void runConsoleUI() {
     while (true) {
         std::cout << "==== МЕНЮ ====";
+        std::cout << "test";
 
     }
 }
