@@ -44,15 +44,3 @@ std::vector<int> generateManualArray(int size) {
     return arr;
 }
 
-std::vector<int> generateArray(int size, ArrayType type) {
-    switch (type) {
-    case ArrayType::RANDOM:
-        return generateRandomArray(size);
-    case ArrayType::BOUNDED:
-        return generateBoundedArray(size);
-    case ArrayType::MANUAL:
-        return generateManualArray(size);
-    default:
-        return generateRandomArray(size);
-    }
-}
