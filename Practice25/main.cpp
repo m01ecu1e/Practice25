@@ -86,6 +86,7 @@ void runConsoleUI() {
 
 int main() {
     setlocale(LC_ALL, "Russian");
+    std::cout << "Hello, World!" << std::endl;
 
     
     cout << "=== АВТОМАТИЧЕСКИЕ ТЕСТЫ ===\n";
