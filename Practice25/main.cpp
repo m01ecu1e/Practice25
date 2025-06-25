@@ -10,7 +10,7 @@ using namespace std;
 
 void printArray(const vector<int>& arr) {
     if (arr.size() > 20) {
-        cout << "Массив слишком большой, выводятся первые 10 и последние 5 элементов:\n";
+        cout << "Массив  большой, выводятся первые 10 и последние 5 элементов:\n";
         for (int i = 0; i < 10; ++i) cout << arr[i] << " ";
         cout << "... ";
         for (size_t i = arr.size() - 5; i < arr.size(); ++i) cout << arr[i] << " ";
