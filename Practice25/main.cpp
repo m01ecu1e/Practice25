@@ -2,22 +2,10 @@
 #include "Generator.h"
 #include "Sorter.h"
 #include "IO.h"
-
 #include <iostream>
+#include <vector>
+#include <iomanip> 
 
 
-
-void runConsoleUI() {
-    while (true) {
-        std::cout << "==== МЕНЮ ====";
-        std::cout << "test";
-        std::cout << "test2";
-
-    }
-}
-
-int main() {
-    setlocale(LC_ALL, "Russian");
-    runConsoleUI();
     return 0;
 }
