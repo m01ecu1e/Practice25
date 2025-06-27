@@ -4,21 +4,38 @@
 #include "IO.h"
 #include <iostream>
 #include <vector>
-
+#include <Windows.h>
 #include <limits>
 #include <string>
 
 using namespace std;
+
+// НАДО:
+// Ввод диапазона генерации чисел для generateRandomArray(size);
+// Будет generateRandomArray(size, min, max);
+//
+// Желательно: 
+// убрать using namespace std;
+// и писать std::cout / std::cin
+// 
+// 
+// 
+// 
+// ОПЦИОНАЛЬНО:
+// 
+// Сделать форматирование вывода секунд, чтобы было не 2.12e-10, а 0.000000002 секунд, типа того
+//
+// ОПЦИОНАЛЬНО: сделать чтобы не надо было вводить .csv при открытия файла
 
 void runConsoleUI() {
     vector<int> arr;
     string filename;
 
     while (true) {
-        cout << "\n=== ГЛАВНОЕ МЕНЮ ===\n";
-        cout << "1. Сгенерировать массив\n";
-        cout << "2. Отсортировать существующий массив\n";
-        cout << "0. Выход\n";
+        std::cout << "\n==== ГЛАВНОЕ МЕНЮ ====\n";
+        std::cout << "1. Сгенерировать массив\n";
+        std::cout << "2. Отсортировать существующий массив\n";
+        std::cout << "0. Выход\n";
 
         int choice;
         cout << "Выберите вариант (0-2): ";
@@ -53,6 +70,7 @@ void runConsoleUI() {
 
             cout << "Введите название файла для сохранения: ";
             getline(cin, filename);
+            filename = filename + ".csv";
             if (writeArrayToFile(filename, arr)) {
                 cout << "Массив сохранён в файл " << filename << "\n";
             }
@@ -67,14 +85,18 @@ void runConsoleUI() {
             if (readArrayFromFile(filename, arr)) {
                 cout << "Файл успешно прочитан.\n";
 
-                SortResult result = sortAndMeasureHeapsort(arr);
-                string sortedFilename = filename + "_sorted";
 
+                SortResult result = sortAndMeasureHeapsort(arr);
+                string sortedFilename;
+
+                cout << "Введите название файла для сохранения отсортированного массива: ";
+                getline(cin, sortedFilename);
+                sortedFilename = sortedFilename + ".csv";
                 if (writeArrayToFile(sortedFilename, arr)) {
-                    cout << "Отсортированный массив сохранён в файл " << sortedFilename << "\n";
+                    cout << "Массив сохранён в файл " << sortedFilename << "\n";
                 }
                 else {
-                    cout << "Ошибка при сохранении отсортированного файла!\n";
+                    cout << "Ошибка при сохранении файла!\n";
                 }
 
                 cout << "Массив отсортировался за " << result.durationSec
@@ -95,7 +117,8 @@ void runConsoleUI() {
 }
 
 int main() {
-    setlocale(LC_ALL, "Russian");
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
     runConsoleUI();
 
     return 0;
