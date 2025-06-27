@@ -14,7 +14,9 @@ using namespace std;
 // Ввод диапазона генерации чисел для generateRandomArray(size);
 // Будет generateRandomArray(size, min, max);
 //
-// 
+// Желательно: 
+// убрать using namespace std;
+// и писать std::cout / std::cin
 // 
 // 
 // 
@@ -30,10 +32,10 @@ void runConsoleUI() {
     string filename;
 
     while (true) {
-        cout << "\n==== ГЛАВНОЕ МЕНЮ ====\n";
-        cout << "1. Сгенерировать массив\n";
-        cout << "2. Отсортировать существующий массив\n";
-        cout << "0. Выход\n";
+        std::cout << "\n==== ГЛАВНОЕ МЕНЮ ====\n";
+        std::cout << "1. Сгенерировать массив\n";
+        std::cout << "2. Отсортировать существующий массив\n";
+        std::cout << "0. Выход\n";
 
         int choice;
         cout << "Выберите вариант (0-2): ";
