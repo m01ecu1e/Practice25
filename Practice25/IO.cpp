@@ -46,7 +46,7 @@ bool writeSortReport(const std::string& reportFilename,
     if (!file.is_open()) {
         return false;
     }
-
+     
     file << "Массив " << originalFilename << " размером " << size
         << " отсортирован за " << std::fixed << std::setprecision(6) << durationSec
         << " секунд за " << swapCount << " операций\n";
