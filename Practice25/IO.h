@@ -5,9 +5,9 @@
 #include <string>
 #include <fstream>
 
-bool readArrayFromCSV(const std::string& filename, std::vector<int>& outArray);
+bool readArrayFromFile(const std::string& filename, std::vector<int>& outArray);
 
-bool writeArrayToCSV(const std::string& filename, const std::vector<int>& arr);
+bool writeArrayToFile(const std::string& filename, const std::vector<int>& arr);
 
 bool writeSortReport(const std::string& reportFilename,
                    const std::string& originalFilename,

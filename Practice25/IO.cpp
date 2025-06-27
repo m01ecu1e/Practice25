@@ -2,7 +2,7 @@
 #include <sstream>
 #include <iomanip>
 
-bool readArrayFromCSV(const std::string& filename, std::vector<int>& outArray) {
+bool readArrayFromFile(const std::string& filename, std::vector<int>& outArray) {
     std::ifstream file(filename);
     if (!file.is_open()) {
         return false;
@@ -28,7 +28,7 @@ bool readArrayFromCSV(const std::string& filename, std::vector<int>& outArray) {
     return true;
 }
 
-bool writeArrayToCSV(const std::string& filename, const std::vector<int>& arr) {
+bool writeArrayToFile(const std::string& filename, const std::vector<int>& arr) {
     std::ofstream file(filename);
     if (!file.is_open()) {
         return false;
