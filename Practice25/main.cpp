@@ -4,7 +4,7 @@
 #include "IO.h"
 #include <iostream>
 #include <vector>
-
+#include <Windows.h>
 #include <limits>
 #include <string>
 
