@@ -33,15 +33,11 @@ void runConsoleUI() {
     while (true) {
         cout << "\n==== ГЛАВНОЕ МЕНЮ ====\n"
             << "1. Сгенерировать массив\n"
-            << "2. Отсортировать существующий массив\n"
-            << "0. Выход\n";
+            << "2. Отсортировать существующий массив\n";
 
         int choice = getIntInput("Выберите вариант (0-2): ", 0, 2);
 
         switch (choice) {
-        case 0:
-            return; // Выход из программы
-
         case 1: {
             int size = getIntInput("Введите размер массива: ", 1);
             arr = generateRandomArray(size);
