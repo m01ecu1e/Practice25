@@ -15,7 +15,7 @@ void runConsoleUI() {
     string filename;
 
     while (true) {
-        cout << "\n==== ГЛАВНОЕ МЕНЮ ====\n";
+        cout << "\n=== ГЛАВНОЕ МЕНЮ ===\n";
         cout << "1. Сгенерировать массив\n";
         cout << "2. Отсортировать существующий массив\n";
         cout << "0. Выход\n";
