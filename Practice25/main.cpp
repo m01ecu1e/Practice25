@@ -1,9 +1,10 @@
-﻿#include "UI.h"
+#include "UI.h"
 #include "Generator.h"
 #include "Sorter.h"
 #include "IO.h"
 #include <iostream>
 #include <vector>
+
 #include <limits>
 #include <string>
 
@@ -96,5 +97,6 @@ void runConsoleUI() {
 int main() {
     setlocale(LC_ALL, "Russian");
     runConsoleUI();
+
     return 0;
 }
