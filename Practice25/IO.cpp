@@ -4,27 +4,19 @@
 
 bool readArrayFromFile(const std::string& filename, std::vector<int>& outArray) {
     std::ifstream file(filename);
-    if (!file.is_open()) {
-        return false;
-    }
+    if (!file) return false;
 
     outArray.clear();
-    std::string line;
-    while (std::getline(file, line)) {
-        std::stringstream ss(line);
-        std::string value;
-        while (std::getline(ss, value, ',')) {
-            try {
-                outArray.push_back(std::stoi(value));
-            }
-            catch (...) {
-                file.close();
-                return false;
-            }
+    std::string value;
+    while (std::getline(file, value, ',')) {
+        try {
+            outArray.push_back(std::stoi(value));
+        }
+        catch (...) {
+            return false;
         }
     }
 
-    file.close();
     return true;
 }
 
